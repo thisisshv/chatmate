@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Register - ChatMate</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+
+    <h2>Welcome to registration page</h2>
+
+    <form method = "POST" class= "mt-5">
+
+        {% csrf_token %}
+
+        {{ register_form|crispy }}
+
+        <button type="submit" class="btn btn-outline-primary mb-5">Register</button>
+
+    </form>
+</div>
+{% endblock content %}
